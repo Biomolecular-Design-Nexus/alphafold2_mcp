@@ -1,0 +1,62 @@
+{
+  "_description": "Configuration for multimer complex prediction",
+  "_source": "Extracted from examples/use_case_2_multimer_prediction.py",
+
+  "model": {
+    "preset": "multimer",
+    "num_predictions_per_model": 5,
+    "preset_options": [
+      "multimer"
+    ]
+  },
+
+  "database": {
+    "preset": "reduced_dbs",
+    "preset_options": [
+      "full_dbs",
+      "reduced_dbs"
+    ],
+    "max_template_date": "2022-01-01"
+  },
+
+  "execution": {
+    "demo_mode": true,
+    "create_sample_if_missing": true,
+    "sample_complex_type": "heterodimer"
+  },
+
+  "paths": {
+    "data_dir": null,
+    "output_dir": "results/multimer_prediction"
+  },
+
+  "sample_complex_types": {
+    "heterodimer": {
+      "description": "Two different protein sequences",
+      "sequences": ["insulin_chain_a", "insulin_chain_b"]
+    },
+    "homodimer": {
+      "description": "Same sequence repeated twice",
+      "sequences": ["insulin_chain_a", "insulin_chain_a"]
+    },
+    "trimer": {
+      "description": "Three protein sequences",
+      "sequences": ["insulin_chain_a", "insulin_chain_b", "small_protein"]
+    }
+  },
+
+  "sample_sequences": {
+    "insulin_chain_a": {
+      "description": "Insulin A chain (21 residues)",
+      "sequence": "GIVEQCCTSICSLYQLENYCN"
+    },
+    "insulin_chain_b": {
+      "description": "Insulin B chain (30 residues)",
+      "sequence": "FVNQHLCGSHLVEALYLVCGERGFFYTPKT"
+    },
+    "small_protein": {
+      "description": "Small test protein (53 residues)",
+      "sequence": "MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKT"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "_description": "Configuration for monomer structure prediction",
+  "_source": "Extracted from examples/use_case_1_monomer_prediction.py",
+
+  "model": {
+    "preset": "monomer",
+    "preset_options": [
+      "monomer",
+      "monomer_casp14",
+      "monomer_ptm"
+    ]
+  },
+
+  "database": {
+    "preset": "reduced_dbs",
+    "preset_options": [
+      "full_dbs",
+      "reduced_dbs"
+    ],
+    "max_template_date": "2022-01-01"
+  },
+
+  "execution": {
+    "demo_mode": true,
+    "create_sample_if_missing": true,
+    "sample_sequence": "insulin_chain_a"
+  },
+
+  "paths": {
+    "data_dir": null,
+    "output_dir": "results/monomer_prediction"
+  },
+
+  "sample_sequences": {
+    "insulin_chain_a": {
+      "description": "Small test protein (21 residues)",
+      "sequence": "GIVEQCCTSICSLYQLENYCN"
+    },
+    "lysozyme": {
+      "description": "Medium protein for testing (129 residues)",
+      "sequence": "KVFGRCELAAAMKRHGLDNYRGYSLGNWVCAAKFESNFNTQATNRNTDGSTDYGILQINSRWWCNDGRTPGSRNLCNIPCSALLSSDITASVNCAKKIVSDGNGMNAWVAWRNRCKGTDVQAWIRGCRL"
+    }
+  }
+}

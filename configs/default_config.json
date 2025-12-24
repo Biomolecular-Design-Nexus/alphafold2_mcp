@@ -1,0 +1,50 @@
+{
+  "_description": "Default configuration for AlphaFold MCP tools",
+  "_source": "Common settings extracted from all use cases",
+
+  "alphafold": {
+    "model_presets": {
+      "monomer": ["monomer", "monomer_casp14", "monomer_ptm"],
+      "multimer": ["multimer"]
+    },
+    "database_presets": ["full_dbs", "reduced_dbs"],
+    "default_max_template_date": "2022-01-01"
+  },
+
+  "execution": {
+    "demo_mode": true,
+    "create_sample_if_missing": true,
+    "default_timeout_hours": 24
+  },
+
+  "paths": {
+    "data_dir": null,
+    "default_output_dir": "results",
+    "repo_alphafold_script": "repo/alphafold/run_alphafold.py"
+  },
+
+  "resources": {
+    "database_sizes": {
+      "full_dbs": "~2.6TB",
+      "reduced_dbs": "~600GB"
+    },
+    "memory_recommendations": {
+      "small_protein": "8-16GB",
+      "medium_protein": "16-32GB",
+      "large_protein": "32-64GB",
+      "large_complex": "64-128GB"
+    },
+    "time_estimates": {
+      "small_monomer_100res": "10-30 minutes",
+      "medium_monomer_300res": "1-3 hours",
+      "large_monomer_1000res": "6-24 hours",
+      "multimer_complex": "2-10x longer than individual chains"
+    }
+  },
+
+  "validation": {
+    "min_sequence_length": 1,
+    "max_sequence_length": 5000,
+    "supported_formats": [".fasta", ".fa", ".fas", ".faa"]
+  }
+}

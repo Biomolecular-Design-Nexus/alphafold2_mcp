@@ -1,0 +1,69 @@
+{
+  "_description": "Configuration for batch protein prediction",
+  "_source": "Extracted from examples/use_case_3_batch_prediction.py",
+
+  "model": {
+    "monomer_preset": "monomer",
+    "multimer_preset": "multimer",
+    "num_predictions_per_model": 5
+  },
+
+  "database": {
+    "preset": "reduced_dbs",
+    "preset_options": [
+      "full_dbs",
+      "reduced_dbs"
+    ],
+    "max_template_date": "2022-01-01"
+  },
+
+  "execution": {
+    "demo_mode": true,
+    "create_sample_if_missing": true,
+    "msa_reuse": true,
+    "max_concurrent": 1
+  },
+
+  "paths": {
+    "data_dir": null,
+    "output_dir": "results/batch_prediction"
+  },
+
+  "file_patterns": {
+    "fasta_extensions": [".fasta", ".fa", ".fas", ".faa"],
+    "output_structure": "one_directory_per_file"
+  },
+
+  "sample_files": {
+    "protein1.fasta": {
+      "type": "monomer",
+      "description": "Small test protein",
+      "sequences": {
+        "protein1|Small test protein": "GIVEQCCTSICSLYQLENYCN"
+      }
+    },
+    "protein2.fasta": {
+      "type": "monomer",
+      "description": "Another test protein",
+      "sequences": {
+        "protein2|Another test protein": "MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKT"
+      }
+    },
+    "complex_heterodimer.fasta": {
+      "type": "multimer",
+      "description": "Insulin heterodimer",
+      "sequences": {
+        "complex_chainA|Insulin chain A": "GIVEQCCTSICSLYQLENYCN",
+        "complex_chainB|Insulin chain B": "FVNQHLCGSHLVEALYLVCGERGFFYTPKT"
+      }
+    },
+    "complex_homodimer.fasta": {
+      "type": "multimer",
+      "description": "Homodimer complex",
+      "sequences": {
+        "homodimer_chain1|First copy": "GIVEQCCTSICSLYQLENYCN",
+        "homodimer_chain2|Second copy": "GIVEQCCTSICSLYQLENYCN"
+      }
+    }
+  }
+}
