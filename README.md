@@ -46,14 +46,26 @@ This MCP provides access to AlphaFold2 protein structure prediction capabilities
 
 ## Installation
 
+### Quick Setup (Recommended)
+
+Run the automated setup script:
+
+```bash
+cd alphafold2_mcp
+bash quick_setup.sh
+```
+
+The script will create the conda environment, install all dependencies, and display the Claude Code configuration. See `quick_setup.sh --help` for options like `--skip-env` or `--skip-repo`.
+
 ### Prerequisites
 - Conda or Mamba (mamba recommended for faster installation)
 - Python 3.10+
 - 16-32GB RAM (64GB+ for large complexes)
 - AlphaFold databases (~600GB reduced, ~2.6TB full)
 
-### Create Environment
-Please strictly follow the information in `reports/step3_environment.md` to obtain the procedure to setup the environment. An example workflow is shown below.
+### Manual Installation (Alternative)
+
+If you prefer manual installation or need to customize the setup, follow the information in `reports/step3_environment.md`:
 
 ```bash
 # Navigate to the MCP directory
